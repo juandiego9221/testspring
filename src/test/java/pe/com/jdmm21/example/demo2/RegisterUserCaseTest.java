@@ -1,20 +1,20 @@
 package pe.com.jdmm21.example.demo2;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import pe.com.jdmm21.example.demo2.domain.RegisterUserCase;
 import pe.com.jdmm21.example.demo2.domain.User;
 import pe.com.jdmm21.example.demo2.persistence.UserEntity;
 import pe.com.jdmm21.example.demo2.persistence.UserRepository;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import java.time.LocalDateTime;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
+import static pe.com.jdmm21.example.demo2.UserAssert.assertThat;
 
 @ExtendWith({MockitoExtension.class})
 public class RegisterUserCaseTest {
@@ -45,8 +45,20 @@ public class RegisterUserCaseTest {
 
     @Test
     void saveUser() {
-        when(userRepository.save(any(UserEntity.class))).thenReturn(new UserEntity("jd", "as"));
+        /*
+        CASO DE ERROR
+         */
+//        when(userRepository.save(any(UserEntity.class))).thenReturn(new UserEntity("asd","asd"));
+
+        /*
+        CASO DE EXITO EN LA PRUEBA
+         */
+        when(userRepository.save(any(UserEntity.class))).thenReturn(new UserEntity(123L, "as", "as", LocalDateTime
+                .now()));
         UserEntity savedUser = registerUserCase.registerUser(new User("jd", "asd"));
-        assertThat(savedUser.getName().equals("jd"));
+
+//        assertThat(savedUser.getName().equals("jd"));
+        assertThat(savedUser).hasRegistrationDate();
+        assertThat(savedUser).hasTheCorrectName("as");
     }
 }
