@@ -94,7 +94,7 @@ public class RegisterRestcontrollertest {
 
         verify(registerUserCase, times(1)).registerUser(userCaptor.capture(), eq(true));
         assertThat(userCaptor.getValue().getName()).isEqualTo("xx1");
-        assertThat(userCaptor.getValue().getEmail()).isEqualTo("asda");
+        assertThat(userCaptor.getValue().getEmail()).isEqualTo("correo");
     }
 
     @Test
