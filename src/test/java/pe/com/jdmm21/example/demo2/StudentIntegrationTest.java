@@ -36,6 +36,18 @@ public class StudentIntegrationTest {
     example1
      */
 
+    /*
+    example2
+     */
+
+    /*
+    example3
+     */
+
+    /*
+    asda
+     */
+
     @Test
     void registrationSuccess() throws Exception {
         StudentResource studentResource = new StudentResource("jdmm21",12);
