@@ -15,6 +15,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import pe.com.jdmm21.example.demo2.controller.ContrllerExceptionHandler;
 import pe.com.jdmm21.example.demo2.controller.RegisterRestController;
 import pe.com.jdmm21.example.demo2.domain.RegisterUserCase2;
+import pe.com.jdmm21.example.demo2.domain.RegisterUserCase3;
 import pe.com.jdmm21.example.demo2.domain.User;
 import pe.com.jdmm21.example.demo2.web.ErrorResult;
 import pe.com.jdmm21.example.demo2.web.UserResource;
@@ -56,7 +57,7 @@ public class RegisterRestcontrollertest {
     MOCKBEAN AUTOMATICAMENTE REEMPLZA EL BEAN DE MISMO TIPO EN ELL APLICATION CONTEXT
      */
     @MockBean
-    private RegisterUserCase2 registerUserCase;
+    private RegisterUserCase3 registerUserCase;
 
     @Test
     void whenValidInput_thenReturn200() throws Exception {
