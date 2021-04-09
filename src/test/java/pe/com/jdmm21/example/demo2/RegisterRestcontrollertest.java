@@ -116,6 +116,10 @@ public class RegisterRestcontrollertest {
         String actualResponseBody = mvcResult.getResponse().getContentAsString();
         assertThat(actualResponseBody).isEqualToIgnoringWhitespace(objectMapper.writeValueAsString(expectedResponseBody));
     }
+    /*
+    COMENTARIO X
+
+     */
 
     @Test
     void whenNullValue_thenReturn400AndErrorResult() throws Exception {
