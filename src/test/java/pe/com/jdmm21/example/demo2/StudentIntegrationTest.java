@@ -32,6 +32,10 @@ public class StudentIntegrationTest {
     @Autowired
     private StudentRepository studentRepository;
 
+    /*
+    example1
+     */
+
     @Test
     void registrationSuccess() throws Exception {
         StudentResource studentResource = new StudentResource("jdmm21",12);
